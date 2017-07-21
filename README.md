@@ -33,7 +33,6 @@ npm run dist;
 ```
 - root/               # 根目录
   - src/                # 开发目录
-  - test/                # 测试目录
   - dist/            # 发布目录
   + webpack/             # webpack配置文件
   webpack.config.*.js   # 各个环境的webpack配置入口文件
