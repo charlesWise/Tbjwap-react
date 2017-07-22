@@ -1,4 +1,4 @@
-# react多页面脚手架
+## react多页面脚手架
 用webpack打包js和css并生成html文件将react组件提前渲染到页面中。
 * [Features](#features)
 * [项目部署](#项目部署)
@@ -39,4 +39,15 @@ npm run dist;
   package.json          # 项目配置
   README.md             # 项目说明
 
+```
+
+### 个人笔记
+
+```
+<Route path="/city/:cityid" getComponent={ City } ></Route>
+<Link to={'/city/' + cityid}></Link>
+let cityid = this.props.params.cityid;
+
+this.props.router.push({pathname:'/msite', query:{geohash}})
+let geohash = this.props.location.query.geohash
 ```
