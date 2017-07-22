@@ -1,8 +1,21 @@
 /* Base Application Styles */
-
 body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑,Tahoma,Verdana;font-size: 12px;line-height: 18px;color: #444;}
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
-textarea{resize: none}
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei",sans-serif;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+  &:focus {
+  outline: none;
+  }
+}
+textarea{resize: none;  -webkit-appearance: none;}
 .clear{height:1px;overflow:hidden;clear:both;}
 a,img{border:0;}
 a{color: #666;text-decoration: none;}
@@ -16,3 +29,31 @@ li{list-style-type:none;}
 .hid{overflow:hidden;}
 .clearfix{*zoom:1}
 .clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+  width: 0px;
+  height: 0px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+  -webkit-appearance: none;
+}

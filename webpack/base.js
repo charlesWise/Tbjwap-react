@@ -35,12 +35,13 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss',  '.less'],
+    extensions: ['', '.js', '.jsx', '.scss',  '.less', '.css'],
     alias: {
       actions: `${defaultSettings.srcPath}/actions/`,
+      reducers: `${defaultSettings.srcPath}/reducers/`,
+      stores: `${defaultSettings.srcPath}/stores/`,
       components: `${defaultSettings.srcPath}/components/`,
       sources: `${defaultSettings.srcPath}/sources/`,
-      stores: `${defaultSettings.srcPath}/stores/`,
       styles: `${defaultSettings.srcPath}/styles/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
       'react/lib/ReactMount': 'react-dom/lib/ReactMount'

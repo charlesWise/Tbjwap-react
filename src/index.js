@@ -8,8 +8,7 @@ import store from './stores/configureStore';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './config/rem';
-import './styles/app';
-import './styles/common';
+import './styles/App';
 
 const history = syncHistoryWithStore(hashHistory, store);
 history.listen(function (location) { return location });
@@ -21,5 +20,5 @@ ReactDOM.render(
         { routes }
       </Router>
     </Provider>,
-     document.getElementById('app')
+    document.getElementById('app')
 );
