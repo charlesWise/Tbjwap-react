@@ -1,4 +1,8 @@
 /**
+ * Created by chenrunsheng on 2017/7/21.
+ */
+
+/**
  * 存储localStorage
  */
 export const setStore = (name, content) => {

@@ -2,6 +2,10 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
+import { Link } from 'react-router';
+
+import './home';
+import Header from 'components/header';
 
 class Home extends React.Component {
   constructor (props) {
@@ -16,7 +20,10 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div>我是首页</div>
+      <section className="home-wrapper">
+          <Header />
+          <Link />
+      </section>
     )
   }
 }

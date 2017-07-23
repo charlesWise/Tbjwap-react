@@ -35,7 +35,7 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.scss',  '.less', '.css'],
+    extensions: ['', '.js', '.jsx', '.css', '.scss',  '.less'],
     alias: {
       actions: `${defaultSettings.srcPath}/actions/`,
       reducers: `${defaultSettings.srcPath}/reducers/`,
