@@ -1,0 +1,78 @@
+@charset "UTF-8";
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+// 字体大小与颜色
+@mixin sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+// 定位上下剧中
+@mixin ct {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+// 定位左右剧中
+@mixin cl {
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+// flex布局 子元素 对其方式
+@mixin fj ($type: space-between){
+  display: flex;
+  justify-content: $type;
+}
+// 字体
+@mixin font($size, $line-height, $family:'Microsoft YaHei') {
+  font: #{$size}/ #{$line-height} $family;
+}
+// 清除浮动
+@mixin clearfix() {
+  clear: both;
+  overflow: hidden;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+//高度与行高的配置
+@mixin height($extend:true, $height : auto, $lineHight:auto){
+    @if($extend){
+        height:$height;
+        line-height: $lineHight;
+    } @else{
+        height:$height;
+        line-height: auto;
+    }
+}
+/**
+ *  @chenrunsheng
+ *  backgroundImages 背景图设置
+ */
+@mixin backgroundImages($backgroundImage,$imageWidth,$imageHeight,$alignX: center,$alignY: center,$rateX: 100%,$rateY: 100%){
+  display: inline-block;
+  width: $imageWidth; 
+  height: $imageHeight; 
+  background: url($backgroundImage) no-repeat $alignX $alignY; 
+  background-size: $rateX $rateY;
+}
+/**
+ *  @chenrunsheng
+ *  $width icon宽度
+ *  $height icon高度
+ */
+@mixin spriteIcon($width, $height, $rate:320/640) {
+  background-size: 100% 100%;
+  display: inline-block;
+  width: $width*$rate;
+  vertical-align: middle;
+  @include height(true, $height*$rate, $height*$rate+1);
+}

@@ -2,7 +2,6 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
-
 import './header'
 
 class Header extends React.Component {
@@ -12,7 +11,7 @@ class Header extends React.Component {
 
   render() {
     return (
-        <header className="head">
+        <header className="header-wrap">
           我是头部
         </header>
     )

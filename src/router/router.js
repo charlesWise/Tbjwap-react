@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import { Route, IndexRedirect} from 'react-router';
-import App from '../pages/app';
+import App from '../views/app';
 
 const Home = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('../pages/home/index').default)
+    cb(null, require('../views/home/index').default)
   },'Home')
 };
 

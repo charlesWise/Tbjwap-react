@@ -10,7 +10,7 @@ import store from './stores/configureStore';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './config/rem';
-import './styles/app';
+import './styles/reset';
 
 const history = syncHistoryWithStore(hashHistory, store);
 history.listen(function (location) { return location });

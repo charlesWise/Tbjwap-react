@@ -42,10 +42,12 @@ module.exports = {
       reducers: `${defaultSettings.srcPath}/reducers/`,
       stores: `${defaultSettings.srcPath}/stores/`,
       components: `${defaultSettings.srcPath}/components/`,
-      sources: `${defaultSettings.srcPath}/sources/`,
+      views: `${defaultSettings.srcPath}/views/`,
+      images: `${defaultSettings.srcPath}/images/`,
       styles: `${defaultSettings.srcPath}/styles/`,
       service: `${defaultSettings.srcPath}/service/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
+      sources: `${defaultSettings.srcPath}/sources/`,
       'react/lib/ReactMount': 'react-dom/lib/ReactMount'
     }
   },

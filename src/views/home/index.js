@@ -7,6 +7,7 @@ import { Link } from 'react-router';
 import './home';
 import { getIndexSpecial,banner } from '../../service/apiUrl';
 import Header from 'components/header';
+import Footer from 'components/footer';
 
 class Home extends React.Component {
   constructor (props) {
@@ -39,6 +40,7 @@ class Home extends React.Component {
               return <Link key={i}>{v.name}</Link>
             })
           }
+          <Footer />
       </section>
     )
   }

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* icons */
+.icon-home{
+  background: url(./../images/footer/home.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-home-active{
+  background: url(./../images/footer/home-active.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
