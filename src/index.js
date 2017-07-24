@@ -1,4 +1,6 @@
 import 'core-js/fn/object/assign';
+import 'babel-polyfill'; //解决regeneratorRuntime问题
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,7 +10,7 @@ import store from './stores/configureStore';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './config/rem';
-import './styles/App';
+import './styles/app';
 
 const history = syncHistoryWithStore(hashHistory, store);
 history.listen(function (location) { return location });

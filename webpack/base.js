@@ -28,10 +28,11 @@ module.exports = {
     noInfo: false,
     host: '0.0.0.0',
     proxy: {
-      '/api': {
-        target: 'https://waptest.toubaojia.com',
-        changeOrigin: true
-      }
+        "/api": {
+            target:'http://tbjtest.toubaojia.com',
+            changeOrigin: true,
+            pathRewrite: {'^/api' : ''}
+        }
     }
   },
   resolve: {
@@ -43,6 +44,7 @@ module.exports = {
       components: `${defaultSettings.srcPath}/components/`,
       sources: `${defaultSettings.srcPath}/sources/`,
       styles: `${defaultSettings.srcPath}/styles/`,
+      service: `${defaultSettings.srcPath}/service/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV,
       'react/lib/ReactMount': 'react-dom/lib/ReactMount'
     }
