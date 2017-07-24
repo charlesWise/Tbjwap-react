@@ -1,7 +1,19 @@
 @charset "UTF-8";
-// @import "../../styles/mixin";
+@import "../../styles/mixin";
 // @import "../../styles/icons";
 
 .footer-wrap{
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include height(true, 2.2rem, 2.2rem);
+    border-top: #e2e2e2 1px solid;
+    ul.footer{
+        @include fj(center);
+        li{
+            width: 25%;
+            text-align: center;
+        }
+    }
 }

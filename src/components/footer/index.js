@@ -12,13 +12,23 @@ class Footer extends React.Component {
   render() {
     return (
         <footer className="footer-wrap">
-          <ul>
+          <ul className="footer">
             <li>
-                
+                <p><i className="icon-home"></i></p>
+                <p>首页</p>
             </li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+                <p><i className="icon-home"></i></p>
+                <p>投资</p>
+            </li>
+            <li>
+                <p><i className="icon-home"></i></p>
+                <p>账号</p>
+            </li>
+            <li>
+                <p><i className="icon-home"></i></p>
+                <p>发现</p>
+            </li>
           </ul>
         </footer>
     )

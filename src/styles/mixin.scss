@@ -74,5 +74,5 @@
   display: inline-block;
   width: $width*$rate;
   vertical-align: middle;
-  @include height(true, $height*$rate, $height*$rate+1);
+  @include height(true, $height*$rate, $height*$rate);
 }
