@@ -1,19 +1,56 @@
-@charset "UTF-8";
 @import "../../styles/mixin";
-// @import "../../styles/icons";
 
 .footer-wrap{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    @include height(true, 2.2rem, 2.2rem);
     border-top: #e2e2e2 1px solid;
     ul.footer{
         @include fj(center);
         li{
             width: 25%;
             text-align: center;
+            padding-top: .2rem;
+            p{
+                &.active{
+                    color: #63af6f;
+                }
+            }
         }
     }
+}
+
+/* icons */
+.icon-home{
+  background: url(./../../images/footer/home.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-home-active{
+  background: url(./../../images/footer/home-active.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-invest{
+  background: url(./../../images/footer/invest.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-invest-active{
+  background: url(./../../images/footer/invest-active.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-account{
+  background: url(./../../images/footer/account.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-account-active{
+  background: url(./../../images/footer/account-active.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-find{
+  background: url(./../../images/footer/find.png) no-repeat;
+  @include spriteIcon(49px, 43px);
+}
+.icon-find-active{
+  background: url(./../../images/footer/find-active.png) no-repeat;
+  @include spriteIcon(49px, 43px);
 }

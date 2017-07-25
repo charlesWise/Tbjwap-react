@@ -4,7 +4,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import './home';
+import './home.scss';
 import { getIndexSpecial,banner } from '../../service/apiUrl';
 import Header from 'components/header';
 import Footer from 'components/footer';

@@ -1,6 +1,10 @@
-@charset "UTF-8";
 /* Base Application Styles */
-body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑,Tahoma,Verdana;font-size: 12px;line-height: 18px;color: #444;}
+body, button, select, textarea, input, label, option, fieldset, legend{
+  font-family: 微软雅黑,Tahoma,Verdana;
+  font-size: 12px;
+  line-height: 18px;
+  color: #444;
+}
 body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
   padding: 0;
   margin: 0;
@@ -16,20 +20,11 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
   outline: none;
   }
 }
-textarea{resize: none;  -webkit-appearance: none;}
-.clear{height:1px;overflow:hidden;clear:both;}
+textarea{
+  resize: none;  
+  -webkit-appearance: none;
+}
 a,img{border:0;}
-a{color: #666;text-decoration: none;}
-li{list-style-type:none;}
-.fl{float:left;}
-.fr{float:right;}
-.nf{clear:both;}
-.red{color:red;font-weight:bold;}
-.green{color:#00b500;font-weight:bold;}
-.ds{display:block;}
-.hid{overflow:hidden;}
-.clearfix{*zoom:1}
-.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar
