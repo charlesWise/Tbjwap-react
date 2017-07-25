@@ -2,7 +2,7 @@
  * Created by chenrunsheng on 2017/7/24.
  */
 import React from 'react';
-import './footer.scss';
+import './footer';
 
 class Footer extends React.Component {
   constructor(props) {

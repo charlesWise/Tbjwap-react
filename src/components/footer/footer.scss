@@ -1,4 +1,5 @@
 @import "../../styles/mixin";
+@import "../../styles/icons";
 
 .footer-wrap{
     position: fixed;
@@ -19,38 +20,4 @@
             }
         }
     }
-}
-
-/* icons */
-.icon-home{
-  background: url(./../../images/footer/home.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-home-active{
-  background: url(./../../images/footer/home-active.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-invest{
-  background: url(./../../images/footer/invest.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-invest-active{
-  background: url(./../../images/footer/invest-active.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-account{
-  background: url(./../../images/footer/account.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-account-active{
-  background: url(./../../images/footer/account-active.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-find{
-  background: url(./../../images/footer/find.png) no-repeat;
-  @include spriteIcon(49px, 43px);
-}
-.icon-find-active{
-  background: url(./../../images/footer/find-active.png) no-repeat;
-  @include spriteIcon(49px, 43px);
 }

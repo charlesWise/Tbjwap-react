@@ -21,7 +21,6 @@
   "author": "chenrunsheng",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "axios": "^0.15.3",
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.0.0",

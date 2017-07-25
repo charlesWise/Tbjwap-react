@@ -1,6 +1,7 @@
 /**
  * Created by chenrunsheng on 2017/7/21.
  */
+ 
 import { baseUrl } from './env';
 
 export default async (type = 'GET', url = '', data = {}, method = 'fetch') => {
@@ -40,9 +41,9 @@ export default async (type = 'GET', url = '', data = {}, method = 'fetch') => {
       var response = await fetch(url, requestConfig);
       var responseJson = await response.json();
     } catch (error) {
-      throw new Error(error)
+      throw new Error(error);
     }
-    return responseJson
+    return responseJson;
   } else {
     let requestObj;
     if (window.XMLHttpRequest) {
@@ -65,7 +66,7 @@ export default async (type = 'GET', url = '', data = {}, method = 'fetch') => {
           }
           return obj;
         } else {
-          throw new Error(requestObj)
+          throw new Error(requestObj);
         }
       }
     }

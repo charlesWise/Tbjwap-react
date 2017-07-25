@@ -4,8 +4,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import './home.scss';
-import { getIndexSpecial,banner } from '../../service/apiUrl';
+import './home';
+import { Banner, GetIndexSpecial } from '../../service/apiUrl';
 import Header from 'components/header';
 import Footer from 'components/footer';
 
@@ -18,15 +18,16 @@ class Home extends React.Component {
   }
 
   componentDidMount () {
-    getIndexSpecial().then(res => {
+    GetIndexSpecial().then(res => {
       if(res.boolen == 1) {
         this.setState({
           data: res.data
         })
       }
     });
-    banner({type: 100}).then(res => {
+    Banner({type: 100}).then(res => {
       if(res.boolen == 1) {
+        
       }
     });
   }

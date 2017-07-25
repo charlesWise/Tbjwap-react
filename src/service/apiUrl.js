@@ -4,10 +4,10 @@
 import fetch from './fetch';
 
 let ctx = '/api';
-let banner = (params) => fetch('GET', ctx+'/Mobile2/Public/banner', params);
-let getIndexSpecial = () => fetch('POST', ctx+'/Mobile2/Index/getIndexSpecial', {});
+let Banner = (params) => fetch('GET', ctx+'/Mobile2/Public/banner', params);
+let GetIndexSpecial = () => fetch('POST', ctx+'/Mobile2/Index/getIndexSpecial', {});
 
 export {
-    banner,
-    getIndexSpecial
+    Banner,
+    GetIndexSpecial
 }
