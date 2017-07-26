@@ -42,6 +42,11 @@
         clear: both;
     }
 }
+// 文字设置 
+@mixin fontStyle($size, $color){
+	font-size: $size;
+	color: $color;
+}
 //高度与行高的配置
 @mixin height($extend:true, $height : auto, $lineHight:auto){
     @if($extend){

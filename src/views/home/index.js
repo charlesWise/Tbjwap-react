@@ -5,7 +5,7 @@ import React from 'react';
 
 import './home';
 import { Banner } from '../../service/apiUrl';
-import Header from 'components/header';
+import AppDownload from 'components/appDownload';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
@@ -27,7 +27,7 @@ class Home extends React.Component {
   render () {
     return (
       <section className="home-wrapper">
-          <Header />
+          <AppDownload />
           <Footer />
       </section>
     )

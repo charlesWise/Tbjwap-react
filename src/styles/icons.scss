@@ -37,3 +37,7 @@
   @include spriteIcon(49px, 43px);
 }
 /* footer end */
+.icon-logo-48{
+  background: url(./../../images/logo/logo_48.png) no-repeat;
+  @include spriteIcon(48px, 48px);
+}
