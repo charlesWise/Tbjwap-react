@@ -30,7 +30,7 @@ module.exports = {
     host: '0.0.0.0',
     proxy: {
         "/api": {
-            target:'http://tbjtest.toubaojia.com',
+            target:'https://m.tourongjia.com',
             changeOrigin: true,
             pathRewrite: {'^/api' : ''}
         }
