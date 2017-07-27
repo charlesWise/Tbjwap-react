@@ -2,9 +2,9 @@
  * Created by chenrunsheng on 2017/7/26.
  */
 import React from 'react';
-import './appDownload';
+import './appDownload.scss';
 
-class AappDownload extends React.Component {
+class AppDownload extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,11 +12,11 @@ class AappDownload extends React.Component {
   render() {
     return (
         <section className="app-download-wrap">
-          
+          <i className="icon-logo-48"></i>
         </section>
     )
   }
 }
 
 
-export default AappDownload;
+export default AppDownload;

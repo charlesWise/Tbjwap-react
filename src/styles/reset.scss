@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /* Base Application Styles */
-html{font-size: 11.75px;}
-body, button, select, textarea, input, label, option, fieldset, legend{
-  font-family: "微软雅黑","Helvetica Neue",Roboto,sans-serif,$fontHeiTi;
+html, body, button, select, textarea, input, label, option, fieldset, legend{
+  font-family: 微软雅黑,Tahoma,Verdana;
+  font-size: 11.75px;
 }
 body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
   padding: 0;
@@ -18,8 +19,9 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
     outline: none;
   }
 }
+
 textarea{
-  resize: none;  
+  resize: none;
   -webkit-appearance: none;
 }
 a,img{border:0;}

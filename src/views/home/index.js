@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import './home';
+import './home.scss';
 import { Banner } from '../../service/apiUrl';
 import AppDownload from 'components/appDownload';
 import Footer from 'components/footer';
