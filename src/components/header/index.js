@@ -2,7 +2,7 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
-import './header.scss'
+import './header.scss';
 
 class Header extends React.Component {
   constructor(props) {

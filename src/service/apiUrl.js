@@ -4,8 +4,8 @@
 import fetch from './fetch';
 
 let ctx = '/api';
-let Banner = (params) => fetch('GET', ctx+'/Mobile2/Public/banner', params);
+let banner = (params) => fetch('GET', ctx+'/Mobile2/Public/banner', params);
 
 export {
-    Banner
+    banner
 }

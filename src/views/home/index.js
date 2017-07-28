@@ -2,25 +2,28 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
-
 import './home.scss';
 
-import { Banner } from 'service/apiUrl';
+import { banner } from 'service/apiUrl';
 import AppDownload from 'components/common/AppDownload';
+import Banner from 'components/common/Banner';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isShowAppDownload: true
+      isShowAppDownload: true,
+      bannerInfo: []
     }
   }
 
   componentDidMount () {
-    Banner({type: 100}).then(res => {
+    banner({type: 100}).then(res => {
       if(res.boolen == 1) {
-        
+        this.setState({
+          bannerInfo: res.data
+        })
       }
     });
   }
@@ -32,10 +35,11 @@ class Home extends React.Component {
   }
 
   render () {
+    console.log(this.state.bannerInfo)
     return (
       <section className="home-wrapper">
           {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
-          
+          <Banner bannerInfo={this.state.bannerInfo} />
           <Footer />
       </section>
     )
