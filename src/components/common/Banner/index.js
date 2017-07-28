@@ -13,14 +13,25 @@ class Banner extends React.Component {
   }
 
   componentDidMount () {
-
+    console.log(this.props.bannerInfo)
   }
 
   render() {
     return (
-        <section className="app-download-wrap">
-          banner
-        </section>
+      <div className="swiper-container">
+        <div className="swiper-wrapper">
+          {
+            this.state.bannerInfo.length > 0 && this.state.bannerInfo.map((item, index) => {
+              return (
+                <div className="swiper-slide food_types_container" key={index}>
+                  {item.title}
+                </div>
+              )
+            })
+          }
+        </div>
+        <div className="swiper-pagination"></div>
+      </div>
     )
   }
 }

@@ -13,19 +13,25 @@ class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      isMount: false,
       isShowAppDownload: true,
       bannerInfo: []
     }
   }
 
-  componentDidMount () {
+  componentWillMount() {
     banner({type: 100}).then(res => {
       if(res.boolen == 1) {
         this.setState({
-          bannerInfo: res.data
+          bannerInfo: res.data,
+          isMount: true
         })
       }
     });
+  }
+
+  componentWillUnmount() {
+    this.setState({isMount: false})
   }
 
   _closeAppDownload() {
@@ -35,11 +41,12 @@ class Home extends React.Component {
   }
 
   render () {
-    console.log(this.state.bannerInfo)
     return (
       <section className="home-wrapper">
           {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
-          <Banner bannerInfo={this.state.bannerInfo} />
+          {
+            this.state.isMount && <Banner bannerInfo={this.state.bannerInfo} />
+          }
           <Footer />
       </section>
     )
