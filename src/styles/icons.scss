@@ -41,3 +41,7 @@
   background: url(./../../images/logo/logo_48.png) no-repeat;
   @include spriteIcon(48px, 48px);
 }
+.icon-close{
+  background: url(./../../images/icons/close.png) no-repeat;
+  @include spriteIcon(31px, 31px);
+}

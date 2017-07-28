@@ -42,6 +42,7 @@ module.exports = {
       actions: `${defaultSettings.srcPath}/actions/`,
       reducers: `${defaultSettings.srcPath}/reducers/`,
       stores: `${defaultSettings.srcPath}/stores/`,
+      router: `${defaultSettings.srcPath}/router/`,
       components: `${defaultSettings.srcPath}/components/`,
       views: `${defaultSettings.srcPath}/views/`,
       images: `${defaultSettings.srcPath}/images/`,

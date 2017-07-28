@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, hashHistory } from 'react-router';
-import routes from './router/router';
-import store from './stores/configureStore';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import routes from './router';
+import store from './stores/configureStore';
 import './config/rem';
-import './styles/reset.scss';
+import 'styles/reset.scss';
 
 const history = syncHistoryWithStore(hashHistory, store);
 history.listen(function (location) { return location });

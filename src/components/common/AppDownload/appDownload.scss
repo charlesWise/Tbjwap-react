@@ -1,0 +1,12 @@
+@import '../../../styles/mixin';
+
+.app-download-wrap{
+    @include height(true, 1.8rem, 1.8rem);
+    background: #2d2d2d;
+    padding: 0 0 0 .7rem;
+    a.download-tips{
+		@include fontStyle(.6rem, #fff);
+		text-decoration: underline;
+		padding: 0 .5rem 0 .3rem;
+    }
+}

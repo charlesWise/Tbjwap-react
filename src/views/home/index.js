@@ -4,15 +4,16 @@
 import React from 'react';
 
 import './home.scss';
-import { Banner } from '../../service/apiUrl';
-import AppDownload from 'components/appDownload';
+
+import { Banner } from 'service/apiUrl';
+import AppDownload from 'components/common/AppDownload';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-
+      isShowAppDownload: true
     }
   }
 
@@ -24,10 +25,17 @@ class Home extends React.Component {
     });
   }
 
+  _closeAppDownload() {
+    this.setState({
+      isShowAppDownload: false
+    })
+  }
+
   render () {
     return (
       <section className="home-wrapper">
-          <AppDownload />
+          {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
+          
           <Footer />
       </section>
     )

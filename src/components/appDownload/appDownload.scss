@@ -1,8 +1,0 @@
-@import "../../styles/mixin";
-@import "../../styles/icons";
-
-.app-download-wrap{
-    @include height(true, 3.4rem, 3.4rem);
-    background: #2d2d2d;
-    @include fontStyle(#fff, 0);
-}
