@@ -4,9 +4,14 @@
     @include height(true, 1.8rem, 1.8rem);
     background: #2d2d2d;
     padding: 0 0 0 .7rem;
+    i{
+      margin-top: -.2rem;
+    }
     a.download-tips{
-		@include fontStyle(.6rem, #fff);
-		text-decoration: underline;
-		padding: 0 .5rem 0 .3rem;
+      @include fontStyle(.5rem, #fff);
+      text-decoration: underline;
+      width: 12.8rem;
+      padding: 0 .5rem 0 .3rem;
+      vertical-align: top;
     }
 }

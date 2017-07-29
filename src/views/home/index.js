@@ -20,14 +20,26 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
+    /* eslint-disable */
     banner({type: 100}).then(res => {
       if(res.boolen == 1) {
+        let bannerImg = [];
+        if(res.data.length > 0) {
+          for (var key in res.data) {
+            bannerImg.push({
+              'url_s700': res.data[key].img.attach.url_s700,
+              'href_url': res.data[key].href
+            })
+          }
+        }
+
         this.setState({
-          bannerInfo: res.data,
+          bannerInfo: bannerImg,
           isMount: true
         })
       }
     });
+    /* eslint-enable */
   }
 
   componentWillUnmount() {
