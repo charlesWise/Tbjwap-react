@@ -45,3 +45,15 @@
   background: url(./../../images/icons/close.png) no-repeat;
   @include spriteIcon(31px, 31px);
 }
+.icon-firms{
+  background: url(./../../images/home/firms.png) no-repeat;
+  @include spriteIcon(140px, 170px, 1/4);
+}
+.icon-bank{
+  background: url(./../../images/home/bank.png) no-repeat;
+  @include spriteIcon(140px, 170px, 1/4);
+}
+.icon-insured{
+  background: url(./../../images/home/insured.png) no-repeat;
+  @include spriteIcon(140px, 170px, 1/4);
+}

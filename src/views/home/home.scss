@@ -1,0 +1,74 @@
+@import "../../styles/mixin";
+
+.act-nav-wrap {
+    width: 100%;
+    background: #fff;
+    padding: .5rem 0;
+    margin: .5rem 0;
+    ul.nav-list {
+        @include fj(center);
+        li{
+            width: 25%;
+            text-align: center;
+            p{
+                @include fontStyle(.6rem, #666);
+                &:nth-child(1) {
+                    img {
+                        width: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.recommend-new-wrap {
+    padding: 0 .2rem;
+    .recommend-content {
+        height: 8rem;
+        border-radius: .5rem;
+        border: 1px solid #F8CCA8;
+        background: linear-gradient(#FFF, #FFF3E8);
+    }
+}
+
+.qualification-wrap {
+    aside {
+        &.insured {
+            text-align: center;
+            i {
+                display: inline-block;
+                vertical-align: middle;
+                width: 1.6rem;
+                height: .05rem;
+                background: #c4c4c4;
+            }
+            span {
+                @include fontStyle(.6rem, #c4c4c4);
+            }
+        }
+        &.more{
+            text-align: center;
+            @include height(true, 1rem, 1rem);
+            a {
+                @include fontStyle(.4rem, #ff8421);
+            }
+        }
+    }
+    ul.qualifiy {
+        @include fj(center);
+        margin: .7rem 0;
+        li{
+            width: 33.3%;
+            text-align: center;
+            p{
+                @include fontStyle(.4rem, #b3b3b3);
+                &:nth-child(1) {
+                    img {
+                        width: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}

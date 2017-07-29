@@ -7,6 +7,9 @@ import './home.scss';
 import { banner } from 'service/apiUrl';
 import AppDownload from 'components/common/AppDownload';
 import Banner from 'components/common/Banner';
+import ActiveNavigation from './ActiveNavigation';
+import RecommendNew from './RecommendNew';
+import Qualification from './Qualification';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
@@ -54,11 +57,12 @@ class Home extends React.Component {
 
   render () {
     return (
-      <section className="home-wrapper">
+      <section className="wrapper">
           {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
-          {
-            this.state.isMount && <Banner bannerInfo={this.state.bannerInfo} />
-          }
+          {this.state.isMount && <Banner bannerInfo={this.state.bannerInfo} />}
+          <ActiveNavigation />
+          <RecommendNew />
+          <Qualification />
           <Footer />
       </section>
     )

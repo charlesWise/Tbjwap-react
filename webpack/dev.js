@@ -26,7 +26,7 @@ let config = Object.assign({}, baseConfig, {
       searchResolveModulesDirectories: false
     })
   ],
-  postcss:[autoprefixer({browsers:['last 4 version', 'safari 5', 'opera 12.1', 'ios 6', 'android 4']})],
+  postcss:[autoprefixer({browsers:['last 5 version', 'safari 5', 'opera 12.1', 'ios 6', 'android 4']})],
   module: defaultSettings.getDefaultModules()
 });
 
