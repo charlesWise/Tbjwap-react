@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {routerMiddleware} from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
 import { hashHistory } from 'react-router'
 
 import rootReducer from '../reducers';

@@ -1,15 +1,11 @@
 /**
- * Created by chenrunsheng on 2017/7/21.
+ * Created by chenrunsheng on 2017/7/29.
  */
 import React from 'react';
-import './home.scss';
+import './invest.scss';
 
 import { banner } from 'service/apiUrl';
-import AppDownload from 'components/common/AppDownload';
 import Banner from 'components/common/Banner';
-import ActiveNavigation from './ActiveNavigation';
-import RecommendNew from './RecommendNew';
-import Qualification from './Qualification';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
@@ -17,7 +13,6 @@ class Home extends React.Component {
     super(props);
     this.state = {
       isMount: false,
-      isShowAppDownload: true,
       bannerInfo: []
     }
   }
@@ -49,20 +44,10 @@ class Home extends React.Component {
     this.setState({isMount: false})
   }
 
-  _closeAppDownload() {
-    this.setState({
-      isShowAppDownload: false
-    })
-  }
-
-  render () {
+   render () {
     return (
       <section className="wrapper">
-          {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
           {this.state.isMount && <Banner bannerInfo={this.state.bannerInfo} />}
-          <ActiveNavigation />
-          <RecommendNew />
-          <Qualification />
           <Footer />
       </section>
     )

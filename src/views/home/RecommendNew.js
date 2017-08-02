@@ -24,9 +24,13 @@ class RecommendNew extends React.Component {
     return (
         <section className="recommend-new-wrap">
             <div className="recommend-content">
-                <div className="recommend-top">银系列</div>
-                <div className="recommend-center">10%</div>
-                <div className="recommend-bottom">投资</div>
+              <div className="recommend-top">
+                <p>时时赚 - SSZ170628002</p>
+              </div>
+              <div className="recommend-center">
+                
+              </div>
+              <div className="recommend-bottom"></div>
             </div>
         </section>
     )

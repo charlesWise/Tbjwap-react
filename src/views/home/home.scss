@@ -23,12 +23,21 @@
 }
 
 .recommend-new-wrap {
-    padding: 0 .2rem;
+    background: #fff;
     .recommend-content {
-        height: 8rem;
-        border-radius: .5rem;
-        border: 1px solid #F8CCA8;
-        background: linear-gradient(#FFF, #FFF3E8);
+        height: 10rem;
+        .recommend-top {
+            width: 100%;
+            @include height(true, 1.6rem, 1.6rem);
+            text-align: center;
+            border-bottom: #d8d8d8 .01rem solid;
+            p {
+                @include fontStyle(.7rem, #555);
+            }
+        }
+        .recommend-center {
+
+        }
     }
 }
 

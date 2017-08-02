@@ -2,6 +2,10 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { isShowLoading } from './../actions';
+import Loading from 'components/common/Loading';
 
 class App extends React.Component {
   constructor(props){
@@ -10,13 +14,38 @@ class App extends React.Component {
 
     }
   }
+
+  componentWillMount() {
+    
+  }
+
+  loading() {
+    // this.props.isShowLoading(true);
+    if (!this.props.loading) return null;
+    return <Loading />
+  }
+
   render(){
     return(
       <div>
-        react app.
+        {this.props.children}
+        {this.loading()}
       </div>
     )
   }
 }
 
-export default App;
+
+function mapStateToProps(state) {
+  return {
+    loading : state.loading
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    isShowLoading: (isShowLoad) => dispatch(isShowLoading(isShowLoad))
+  }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )(App);
