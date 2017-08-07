@@ -2,7 +2,7 @@
  * Created by chenrunsheng on 2017/7/21.
  */
 import React from 'react';
-import { Route, IndexRoute, IndexRedirect } from 'react-router';
+import { Route } from 'react-router';
 import App from '../views/app';
 
 const Home = (location, cb) => {
@@ -16,11 +16,8 @@ const Invest = (location, cb) => {
   },'Invest')
 };
 
-
 const routes = (
   <Route path="/" component={ App }>
-    <IndexRedirect from="/" to='/home'/>
-    <IndexRoute component={ Home } />
     <Route path="/home" getComponent={ Home }></Route>
     <Route path="/invest" getComponent={ Invest }></Route>
   </Route>

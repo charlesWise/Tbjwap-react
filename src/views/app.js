@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { isShowLoading } from './../actions';
 import Loading from 'components/common/Loading';
+import Home from 'views/home';
 
 class App extends React.Component {
   constructor(props){
@@ -28,7 +29,7 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        {this.props.children}
+        {this.props.children|| <Home/>}
         {this.loading()}
       </div>
     )
