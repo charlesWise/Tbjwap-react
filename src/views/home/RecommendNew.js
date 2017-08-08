@@ -28,7 +28,13 @@ class RecommendNew extends React.Component {
                 <p>时时赚 - SSZ170628002</p>
               </div>
               <div className="recommend-center">
-                
+
+                <div className="speed-schedule">
+                  <div className="half-circle"></div>
+                  <div className="pie"></div>
+                  <div className="outer"></div>
+                </div>
+
               </div>
               <div className="recommend-bottom"></div>
             </div>

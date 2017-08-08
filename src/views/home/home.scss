@@ -36,7 +36,46 @@
             }
         }
         .recommend-center {
-
+            position: relative;
+            width: 8rem;
+            height: 4rem;
+            margin: 0 auto;
+            overflow: hidden;
+            .speed-schedule{
+                width: 100%;
+                height: 100%;
+            }
+            .half-circle{
+                position: absolute;
+                z-index: 100;
+                left: .25rem;
+                top: .25rem;
+                width: 7.5rem;
+                height: 7.5rem;
+                transform: rotate(90deg);
+                clip: rect(0, 8rem, 8rem, 0);
+                border-radius: 50%;
+                background: #fff;
+            }
+            .outer{
+                position: absolute;
+                z-index: 99;
+                width: 8rem;
+                height: 8rem;
+                transform: rotate(65deg);
+                clip: rect(0, 4rem, 8rem, 0);/* 这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
+                border-radius: 50%;
+                background: #ffbe00;
+            }
+            .pie{
+                position: absolute;
+                width: 8rem;
+                height: 8rem;
+                transform: rotate(90deg);
+                clip: rect(0, 4rem, 8rem, 0);
+                border-radius: 50%;
+                background-color: #dadad8;
+            }
         }
     }
 }
