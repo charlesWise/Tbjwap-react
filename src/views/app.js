@@ -4,9 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { isShowLoading } from './../actions';
 import Loading from 'components/common/Loading';
-import Home from 'views/home';
 
 class App extends React.Component {
   constructor(props){
@@ -16,26 +14,20 @@ class App extends React.Component {
     }
   }
 
-  componentWillMount() {
-    
-  }
-
-  loading() {
-    // this.props.isShowLoading(true);
-    if (!this.props.loading) return null;
-    return <Loading />
+  componentWillMount(){
+      this.props.router.replace('home');
   }
 
   render(){
+    let { loading } = this.props;
     return(
       <div>
-        {this.props.children|| <Home/>}
-        {this.loading()}
+        {this.props.children}
+        {loading && <Loading />}
       </div>
     )
   }
 }
-
 
 function mapStateToProps(state) {
   return {
@@ -43,10 +35,4 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    isShowLoading: (isShowLoad) => dispatch(isShowLoading(isShowLoad))
-  }
-}
-
-export default connect( mapStateToProps, mapDispatchToProps )(App);
+export default connect( mapStateToProps )(App);

@@ -3,24 +3,17 @@
  */
 import React from 'react';
 import { Link } from 'react-router';
-import { indexNavigation } from 'service/apiUrl';
 
 class ActiveNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        actNavList: []
+        actNavList: this.props.actNavList || []
     }
   }
 
   componentWillMount() {
-    indexNavigation({}).then(res => {
-      if(res.boolen == 1) {
-        this.setState({
-          actNavList: res.data
-        })
-      }
-    });
+    
   }
 
   render() {

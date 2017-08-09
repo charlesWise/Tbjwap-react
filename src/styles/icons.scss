@@ -57,3 +57,11 @@
   background: url(./../../images/home/insured.png) no-repeat;
   @include spriteIcon(140px, 170px, 1/4);
 }
+.icon-money{
+  background: url(./../../images/home/money.png) no-repeat;
+  @include spriteIcon(39px, 39px);
+}
+.icon-time{
+  background: url(./../../images/home/time.png) no-repeat;
+  @include spriteIcon(39px, 39px);
+}

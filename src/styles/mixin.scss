@@ -81,5 +81,8 @@
   @include height(true, $height*$rate, $height*$rate);
 }
 
-$footNavIndex: 99;
-$maskIndex: 999;
+$smallIndex: 9;
+$commonIndex: 99;
+$bigIndex: 999;
+$footNavIndex: 9999;
+$maskIndex: 99999;
