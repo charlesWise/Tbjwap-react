@@ -15,10 +15,10 @@ history.listen(function (location) { return location });
 
 // Render the main component into the dom
 ReactDOM.render(
-    <Provider store={store}>
-      <Router history={history}>
-        { routes }
-      </Router>
-    </Provider>,
-    document.getElementById('app')
+  <Provider store={store}>
+    <Router history={history}>
+      {routes}
+    </Router>
+  </Provider>,
+  document.getElementById('app')
 );

@@ -29,15 +29,15 @@ module.exports = {
     noInfo: false,
     host: '0.0.0.0',
     proxy: {
-        "/api": {
-            target:'https://m.tourongjia.com',
-            changeOrigin: true,
-            pathRewrite: {'^/api' : ''}
-        }
+      "/api": {
+        target: 'https://m.tourongjia.com',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' }
+      }
     }
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss',  '.less'],
+    extensions: ['', '.js', '.jsx', '.css', '.scss', '.less'],
     alias: {
       actions: `${defaultSettings.srcPath}/actions/`,
       reducers: `${defaultSettings.srcPath}/reducers/`,

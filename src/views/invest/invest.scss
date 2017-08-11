@@ -1,0 +1,24 @@
+@import "../../styles/mixin";
+
+.invest-nav-wrap{
+    ul{
+        display: flex;
+        @include height(true, 1.8rem, 1.8rem);
+        background: #fff;
+        li{
+            flex: 1;
+            text-align: center;
+            a{
+                @include fontStyle(.6rem, #333);
+            }
+            &.active{
+                a{
+                    color: #ff811c;
+                    border: 1px solid #ff811c;
+                    border-radius: 1.8297rem;
+                    padding: .05rem .75rem;
+                }
+            }
+        }
+    }
+}

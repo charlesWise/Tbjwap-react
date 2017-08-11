@@ -14,8 +14,8 @@ class Banner extends React.Component {
     }
   }
 
-  componentDidMount () {
-    
+  componentDidMount() {
+
   }
 
   render() {
@@ -27,22 +27,22 @@ class Banner extends React.Component {
       continuous: true,
       disableScroll: false,
       stopPropagation: false,
-      callback: function(index, elem) {},
-      transitionEnd: function(index, elem) {}
+      callback: function (index, elem) { },
+      transitionEnd: function (index, elem) { }
     };
     /* eslint-enable */
     return (
-        <ReactSwipe ref={v => this.reactSwipe = v} className="carousel" swipeOptions={swipeOptions}>
-            {
-              this.state.bannerInfo.length > 0 && this.state.bannerInfo.map((item, index) => {
-                return (
-                  <a key={'banner'+index} href={item.href_url}>
-                    <img src={item.url_s700} alt=""/>
-                  </a>
-                )
-              })
-            }
-        </ReactSwipe>
+      <ReactSwipe ref={v => this.reactSwipe = v} className="carousel" swipeOptions={swipeOptions}>
+        {
+          this.state.bannerInfo.length > 0 && this.state.bannerInfo.map((item, index) => {
+            return (
+              <a key={'banner' + index} href={item.href_url}>
+                <img src={item.url_s700} alt="" />
+              </a>
+            )
+          })
+        }
+      </ReactSwipe>
     )
   }
 }

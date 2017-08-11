@@ -10,7 +10,7 @@ export default async (type = 'GET', url = '', data = {}, method = 'fetch') => {
 
   if (type === 'GET') {
     let dataStr = '';
-    Object.keys(data).forEach( key => {
+    Object.keys(data).forEach(key => {
       dataStr += key + '=' + data[key] + '&';
     });
 

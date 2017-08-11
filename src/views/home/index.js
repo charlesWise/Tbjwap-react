@@ -16,7 +16,7 @@ import Qualification from './Qualification';
 import Footer from 'components/footer';
 
 class Home extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       isShowAppDownload: true,
@@ -32,17 +32,17 @@ class Home extends React.Component {
   }
 
   componentWillUnmount() {
-    this.setState({isMount: false})
+    this.setState({ isMount: false })
   }
 
   async _fetchData() {
     let { isShowLoading } = this.props;
     isShowLoading(true);
     /* eslint-disable */
-    banner({type: 100}).then(res => {
-      if(res.boolen == 1) {
+    banner({ type: 100 }).then(res => {
+      if (res.boolen == 1) {
         let bannerImg = [];
-        if(res.data.length > 0) {
+        if (res.data.length > 0) {
           for (var key in res.data) {
             bannerImg.push({
               'url_s700': res.data[key].img.attach.url_s700,
@@ -50,21 +50,21 @@ class Home extends React.Component {
             })
           }
         }
-        this.setState({bannerInfo: bannerImg})
+        this.setState({ bannerInfo: bannerImg })
         this._isMount();
       }
     });
-    
+
     indexNavigation({}).then(res => {
-      if(res.boolen == 1) {
-        this.setState({actNavList: res.data})
+      if (res.boolen == 1) {
+        this.setState({ actNavList: res.data })
         this._isMount();
       }
     });
 
     recommendNew({}).then(res => {
-      if(res.boolen == 1) {
-        this.setState({recommendInfo: res.data})
+      if (res.boolen == 1) {
+        this.setState({ recommendInfo: res.data })
         this._isMount();
         isShowLoading(false);
       }
@@ -73,7 +73,7 @@ class Home extends React.Component {
   }
 
   _isMount() {
-    if(!this.isMount) {
+    if (!this.isMount) {
       this.isMount = true;
     }
   }
@@ -84,22 +84,22 @@ class Home extends React.Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <section className="wrapper">
-          {this.state.isShowAppDownload && <AppDownload closeAppDownload = {() => this._closeAppDownload()} />}
-          {this.isMount && <Banner bannerInfo = {this.state.bannerInfo} />}
-          {this.isMount && <ActiveNavigation actNavList = {this.state.actNavList} />}
-          {this.isMount && <RecommendNew recommendInfo = {this.state.recommendInfo} />}
-          <Qualification />
-          <Footer router = {this.props.router} />
+        {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
+        {this.isMount && <Banner bannerInfo={this.state.bannerInfo} />}
+        {this.isMount && <ActiveNavigation actNavList={this.state.actNavList} />}
+        {this.isMount && <RecommendNew recommendInfo={this.state.recommendInfo} />}
+        <Qualification />
+        <Footer router={this.props.router} />
       </section>
     )
   }
 }
 
 function mapStateToProps() {
- return {}
+  return {}
 }
 
 function mapDispatchToProps(dispatch) {
@@ -108,4 +108,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

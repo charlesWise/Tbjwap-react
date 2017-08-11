@@ -13,13 +13,12 @@ class Loading extends React.Component {
 
   render() {
     return (
-        <section className="loading-wap">
-            <div className="loading">
-                <ReactLoading type={'spinningBubbles'} color={'#FFF'} width={'2.8rem'} height={'2.8rem'} />
-                <p>Loading...</p>
-            </div>
-            
-        </section>
+      <section className="loading-wap">
+        <div className="loading">
+          <ReactLoading type={'spinningBubbles'} color={'#FFF'} width={'2.8rem'} height={'2.8rem'} />
+          <p>Loading...</p>
+        </div>
+      </section>
     )
   }
 }

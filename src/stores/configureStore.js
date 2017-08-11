@@ -13,7 +13,7 @@ import rootReducer from '../reducers';
 const loggerMiddleware = createLogger();
 const reduxRouterMiddleware = routerMiddleware(hashHistory);
 
- function configure(preloadedState) {
+function configure(preloadedState) {
   return createStore(
     rootReducer,
     preloadedState,
