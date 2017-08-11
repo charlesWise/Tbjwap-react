@@ -16,9 +16,8 @@ class RecommendNew extends React.Component {
   }
 
   render() {
-    if(!Object.keys(this.props.recommendInfo).length) return;
+    if(this.props.recommendInfo == null) return null;
     let { prjList } = this.props.recommendInfo;
-    console.log(prjList)
     return (
         <section className="recommend-new-wrap">
             <div className="recommend-content">

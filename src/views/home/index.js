@@ -27,11 +27,8 @@ class Home extends React.Component {
     this.isMount = false;
   }
 
-  componentWillMount() {
-    let { isShowLoading } = this.props;
-    isShowLoading(true);
+  componentDidMount() {
     this._fetchData();
-    isShowLoading(false);
   }
 
   componentWillUnmount() {
@@ -39,6 +36,8 @@ class Home extends React.Component {
   }
 
   async _fetchData() {
+    let { isShowLoading } = this.props;
+    isShowLoading(true);
     /* eslint-disable */
     banner({type: 100}).then(res => {
       if(res.boolen == 1) {
@@ -55,7 +54,7 @@ class Home extends React.Component {
         this._isMount();
       }
     });
-
+    
     indexNavigation({}).then(res => {
       if(res.boolen == 1) {
         this.setState({actNavList: res.data})
@@ -67,6 +66,7 @@ class Home extends React.Component {
       if(res.boolen == 1) {
         this.setState({recommendInfo: res.data})
         this._isMount();
+        isShowLoading(false);
       }
     });
     /* eslint-enable */
@@ -87,12 +87,12 @@ class Home extends React.Component {
   render () {
     return (
       <section className="wrapper">
-          {this.state.isShowAppDownload && <AppDownload closeAppDownload={() => this._closeAppDownload()} />}
-          {this.isMount && <Banner bannerInfo={this.state.bannerInfo} />}
-          {this.isMount && <ActiveNavigation actNavList={this.state.actNavList} />}
-          {this.isMount && <RecommendNew recommendInfo={this.state.recommendInfo} />}
+          {this.state.isShowAppDownload && <AppDownload closeAppDownload = {() => this._closeAppDownload()} />}
+          {this.isMount && <Banner bannerInfo = {this.state.bannerInfo} />}
+          {this.isMount && <ActiveNavigation actNavList = {this.state.actNavList} />}
+          {this.isMount && <RecommendNew recommendInfo = {this.state.recommendInfo} />}
           <Qualification />
-          <Footer />
+          <Footer router = {this.props.router} />
       </section>
     )
   }

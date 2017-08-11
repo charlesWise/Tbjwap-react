@@ -8,7 +8,7 @@ class ActiveNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        actNavList: this.props.actNavList || []
+
     }
   }
 
@@ -17,11 +17,13 @@ class ActiveNavigation extends React.Component {
   }
 
   render() {
+    if(!Object.keys(this.props.actNavList).length) return null;
+    let actNavList = this.props.actNavList;
     return (
         <section className="act-nav-wrap">
           <ul className="nav-list">
             {
-                this.state.actNavList.length > 0 && this.state.actNavList.map((item, index) => {
+                actNavList.map((item, index) => {
                     return (
                         <li key={index}>
                             <Link to={item.href}>

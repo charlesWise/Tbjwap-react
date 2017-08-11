@@ -47,8 +47,8 @@ class Home extends React.Component {
    render () {
     return (
       <section className="wrapper">
-          {this.state.isMount && <Banner bannerInfo={this.state.bannerInfo} />}
-          <Footer />
+          {this.state.isMount && <Banner bannerInfo = {this.state.bannerInfo} />}
+          <Footer router = {this.props.router} />
       </section>
     )
   }

@@ -3,19 +3,16 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-
 import Loading from 'components/common/Loading';
 
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   componentWillMount(){
-      this.props.router.replace('home');
+
   }
 
   render(){
