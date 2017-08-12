@@ -28,7 +28,11 @@ class RecommendNew extends React.Component {
             <div className="speed-schedule">
               <div className="half-circle"></div>
               <div className="pie"></div>
-              <div className="outer"></div>
+              <div className="outer"
+                style={{
+                  transform: 'rotate('+ prjList.recommend.schedule-90 +'deg)'
+                  }}
+                ></div>
             </div>
             <div className="income-case">
               <p><span>{prjList.recommend.year_rate.split('+')[0]}</span>.00+{prjList.recommend.year_rate.split('+')[1]}%</p>
@@ -40,7 +44,7 @@ class RecommendNew extends React.Component {
             </ul>
           </div>
           <div className="recommend-bottom">
-            <ul className="invest-explain" >
+            <ul className="invest-explain">
               <li>
                 <span><i className="icon-time"></i></span>
                 <span>

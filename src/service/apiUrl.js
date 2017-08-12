@@ -7,9 +7,11 @@ let ctx = '/api';
 let banner = async (params) => fetch('GET', ctx + '/Mobile2/Public/banner', params);
 let indexNavigation = async () => fetch('POST', ctx + '/Mobile2/Index/indexNavigation', {});
 let recommendNew = async () => fetch('POST', ctx + '/Mobile2/Invest/recommendNew', {});
+let plist = async (params) => fetch('POST', ctx + '/Mobile2/Invest/plist', params);
 
 export {
     banner,
     indexNavigation,
-    recommendNew
+    recommendNew,
+    plist
 }

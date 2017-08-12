@@ -22,3 +22,110 @@
         }
     }
 }
+
+.invest-list-wrap{
+    ul{
+        padding: 0 .3rem;
+        li{
+            background: #fff;
+            border: .01rem solid rgba(0,0,0,.12);
+            border-radius: .1rem;
+            margin-top: .4rem;
+            overflow: hidden;
+            display: flex;
+            .list-left{
+                flex: 3;
+                .title-series{
+                    border-left: .1rem solid #FF811C;
+                    @include height(true, 1rem, 1rem);
+                    span{
+                        &.title{
+                            display: inline-block;
+                            padding: 0 .2rem;
+                            i{
+                                display: inline-block;
+                                vertical-align: top;
+                                &:nth-child(1){
+                                    @include fontStyle(.5rem, #FF811C);
+                                }
+                                &:nth-child(2){
+                                    @include fontStyle(.5rem, #d8d8d8);
+                                    padding: 0 .1rem;
+                                }
+                                &:nth-child(3){
+                                    @include fontStyle(.5rem, #000);
+                                }
+                            }
+                        }
+                        &.reward{
+                            display: inline-block;
+                            i{
+                                vertical-align: top;
+                                @include fontStyle(.5rem, #FF811C);
+                                border: .01rem #FF811C solid;
+                                border-radius: .3rem;
+                                padding: 0 .2rem;
+                            }
+                        }
+                    }
+                }
+                .gradient-line{
+                    width: 100%;
+                    height: .02rem;
+                    background: linear-gradient(to right,#d8d8d8,#fff 80%);
+                }
+                .rate-days-amount{
+                    padding: .3rem 0 0 .5rem;
+                    span{
+                        &:nth-child(1){
+                            @include fontStyle(.5rem, #FF811C);
+                            i{
+                                @include fontStyle(.9rem, #FF811C);
+                            }
+                        }
+                        &:nth-child(2){
+                            @include fontStyle(.5rem, #000);
+                            width: 3rem;
+                            display: inline-block;
+                            text-align: center;
+                        }
+                        &:nth-child(3){
+                            @include fontStyle(.5rem, #000);
+                        }
+                    }
+                }
+                .tips{
+                    @include height(true, 1.3rem, 1.3rem);
+                    padding-left: .5rem;
+                    span{
+                        display: inline-block;
+                        vertical-align: top;
+                        @include fontStyle(.5rem, #8e8e8e);
+                        i{
+                            padding: 0 .2rem;
+                            color: #cecece;
+                        }
+                    }
+                }
+            }
+            .list-right{
+                flex: 1;
+                position: relative;
+                .speed-rate{
+                    padding-top: 1.1rem;
+                    text-align: center;
+                }
+                .new-guest{
+                    text-align: center;
+                    width: 4rem;
+                    position: absolute;
+                    right: -1.5rem;
+                    top: .2rem;
+                    @include fontStyle(.5rem, #fff);
+                    transform: rotate(45deg);
+                    background: linear-gradient(to left,#FF8A2C,#ffffff);
+                }
+            }
+        }
+    }
+}

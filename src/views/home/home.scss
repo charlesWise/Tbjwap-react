@@ -103,7 +103,7 @@
                     z-index: $commonIndex;
                     width: 8rem;
                     height: 8rem;
-                    transform: rotate(65deg);
+                    // transform: rotate(65deg);
                     clip: rect(0, 4rem, 8rem, 0);/* 这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
                     border-radius: 50%;
                     background: #ffbe00;
