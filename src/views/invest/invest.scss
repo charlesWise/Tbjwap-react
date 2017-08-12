@@ -1,6 +1,7 @@
 @import "../../styles/mixin";
 
 .invest-nav-wrap{
+    padding-top: 1.8rem;
     ul{
         display: flex;
         @include height(true, 1.8rem, 1.8rem);
