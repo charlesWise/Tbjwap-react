@@ -75,7 +75,7 @@ class InvestList extends React.Component {
                                     </div>
                                     <div className="list-right">
                                         <aside className="speed-rate">
-                                            <SpeedRate schedule={item.schedule} />
+                                            <SpeedRate schedule={item.schedule} id={item.id} />
                                         </aside>
                                         {
                                             item.is_new == 1 && <div className="new-guest">新客</div>
