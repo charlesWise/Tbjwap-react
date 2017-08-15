@@ -176,7 +176,7 @@ export const animate = (element, target, duration = 400, mode = 'ease-out', call
 
   //获取dom样式
   const attrStyle = attr => {
-    if (attr === "opacity") {
+    if (attr === 'opacity') {
       return Math.round(getStyle(element, attr, 'float') * 100);
     } else {
       return getStyle(element, attr);
@@ -257,8 +257,8 @@ export const animate = (element, target, duration = 400, mode = 'ease-out', call
       if (status) {
         flag = false;
         //opacity 和 scrollTop 需要特殊处理
-        if (attr === "opacity") {
-          element.style.filter = "alpha(opacity:" + (iCurrent + iSpeed) + ")";
+        if (attr === 'opacity') {
+          element.style.filter = 'alpha(opacity:' + (iCurrent + iSpeed) + ')';
           element.style.opacity = (iCurrent + iSpeed) / 100;
         } else if (attr === 'scrollTop') {
           element.scrollTop = iCurrent + iSpeed;

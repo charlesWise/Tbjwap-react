@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { plist } from 'service/apiUrl';
 import { isShowLoading } from './../../actions';
+import { getStyle } from './../../config/mUtils'
 import SpeedRate from './SpeedRate';
 import LoadMore from 'components/common/LoadMore';
 
@@ -14,38 +15,136 @@ class InvestList extends React.Component {
         super(props);
         this.state = {
             page: 1,
-            plistArr: []
+            plistArr: [],
+            preventRepeatReuqest: false, //到达底部加载数据，防止重复加载
+            isLoadMore: false //显示加载动画
         }
     }
 
-    componentDidMount() {
-        this._fetchData();
-    }
-
-    async _fetchData() {
-        let { isShowLoading } = this.props;
-        isShowLoading(true);
-        /* eslint-disable */
-        let params = {
+    async componentWillReceiveProps() {
+        this.setState({
+            isLoadMore: true
+        })
+        const params = {
             page: this.state.page,
             per_page: 15,
-            isNoAuto: false,
-            prj_series: 0
+            isNoAuto: false
         }
-        plist(params).then(res => {
-            if (res.boolen == 1) {
-                this.setState({ plistArr: res.data.list })
-                isShowLoading(false);
-            }
+        let res = await plist(params);
+        this.setState({
+            plistArr: [...res.data.list],
+            isLoadMore: false
         });
-        /* eslint-enable */
+    }
+
+    async componentDidMount() {
+        let { isShowLoading } = this.props;
+        isShowLoading(true);
+        const params = {
+            page: this.state.page,
+            per_page: 15,
+            isNoAuto: false
+        }
+        let res = await plist(params);
+        isShowLoading(false);
+        this.setState({
+            plistArr: [...res.data.list],
+            isLoadMore: false
+        });
+        let el = window.document.getElementById('loaderMore');
+        let windowHeight = window.screen.height;
+        let height;
+        let setTop;
+        let paddingBottom;
+        let marginBottom;
+        let requestFram;
+        let oldScrollTop;
+        let scrollEl;
+        let heightEl;
+        let scrollType = el.attributes.type && el.attributes.type.value;
+        let scrollReduce = 2;
+        if (scrollType == 2) {
+            scrollEl = el;
+            heightEl = el.children[0];
+        } else {
+            scrollEl = document.body;
+            heightEl = el;
+        }
+
+        el.addEventListener('touchstart', () => {
+            height = heightEl.clientHeight;
+            if (scrollType == 2) {
+                height = height
+            }
+            setTop = el.offsetTop;
+            paddingBottom = getStyle(el, 'paddingBottom');
+            marginBottom = getStyle(el, 'marginBottom');
+        }, false)
+
+        el.addEventListener('touchmove', () => {
+            loadMore();
+        }, false)
+
+        el.addEventListener('touchend', () => {
+            oldScrollTop = scrollEl.scrollTop;
+            moveEnd();
+        }, false)
+
+        const moveEnd = () => {
+            requestFram = requestAnimationFrame(() => {
+                if (scrollEl.scrollTop != oldScrollTop) {
+                    oldScrollTop = scrollEl.scrollTop;
+                    moveEnd()
+                } else {
+                    cancelAnimationFrame(requestFram);
+                    height = heightEl.clientHeight;
+                    loadMore();
+                }
+            })
+        }
+
+        const loadMore = () => {
+            if ((scrollEl.scrollTop + windowHeight) >= (height + setTop + paddingBottom + marginBottom - scrollReduce)) {
+                this._loaderMore()
+            }
+        }
+    }
+
+    //到达底部加载更多数据
+    async _loaderMore() {
+        //防止重复请求
+        if (this.state.preventRepeatReuqest) return;
+        let page = this.state.page + 1;
+        this.setState({
+            isLoadMore: true,
+            preventRepeatReuqest: true,
+            page
+        });
+
+        const params = {
+            page: this.state.page,
+            per_page: 15,
+            isNoAuto: false
+        }
+        let res = await plist(params);
+        console.log(res);
+        this.setState({
+            plistArr: [...this.state.plistArr, ...res.data.list],
+            isLoadMore: false
+        });
+
+        //当获取数据小于15，说明没有更多数据，不需要再次请求数据
+        if (res.length < 15) return;
+        this.setState({
+            preventRepeatReuqest: false
+        })
     }
 
     render() {
         if (!this.state.plistArr && !this.state.plistArr.length) return;
         return (
             <section className="invest-list-wrap">
-                <ul>
+                <ul id="loaderMore" type="1">
                     {
                         this.state.plistArr.map((item, index) => {
                             return (
@@ -87,7 +186,9 @@ class InvestList extends React.Component {
                         })
                     }
                 </ul>
-                <LoadMore />
+                {
+                    this.state.preventRepeatReuqest && <LoadMore />
+                }
             </section>
         )
     }
