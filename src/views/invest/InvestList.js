@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { plist } from 'service/apiUrl';
 import { isShowLoading } from './../../actions';
 import SpeedRate from './SpeedRate';
+import LoadMore from 'components/common/LoadMore';
 
 class InvestList extends React.Component {
     constructor(props) {
@@ -86,6 +87,7 @@ class InvestList extends React.Component {
                         })
                     }
                 </ul>
+                <LoadMore />
             </section>
         )
     }

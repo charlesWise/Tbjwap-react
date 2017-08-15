@@ -45,9 +45,9 @@ class SpeedRate extends React.Component {
             cxt.clearRect(0, 0, cWidth, cHeight);
             var endRadian = sR + text * step;
             // 画灰色圆弧
-            drawCanvas(cWidth / 2, cHeight / 2, 25, sR, sR + (PI + (PI - sR) * 2), baseColor, 3);
+            drawCanvas(cWidth / 2, cHeight / 2, 25, sR, sR + (PI + (PI - sR) * 2), baseColor, 2);
             // 画红色圆弧
-            drawCanvas(cWidth / 2, cHeight / 2, 25, sR, endRadian, coverColor, 3);
+            drawCanvas(cWidth / 2, cHeight / 2, 25, sR, endRadian, coverColor, 2);
 
             // 画红色圆头
             // 红色圆头其实就是一个圆，关键的是找到其圆心，涉及到三角函数知识，自己画个图一看就明了
