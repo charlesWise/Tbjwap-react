@@ -28,7 +28,8 @@ class InvestList extends React.Component {
         const params = {
             page: this.state.page,
             per_page: 15,
-            isNoAuto: false
+            isNoAuto: false,
+            prj_series: this.props.prj_series
         }
         let res = await plist(params);
         this.setState({
@@ -43,7 +44,8 @@ class InvestList extends React.Component {
         const params = {
             page: this.state.page,
             per_page: 15,
-            isNoAuto: false
+            isNoAuto: false,
+            prj_series: this.props.prj_series
         }
         let res = await plist(params);
         isShowLoading(false);
@@ -105,7 +107,7 @@ class InvestList extends React.Component {
 
         const loadMore = () => {
             if ((scrollEl.scrollTop + windowHeight) >= (height + setTop + paddingBottom + marginBottom - scrollReduce)) {
-                this._loaderMore()
+                this._loaderMore();
             }
         }
     }
@@ -124,10 +126,10 @@ class InvestList extends React.Component {
         const params = {
             page: this.state.page,
             per_page: 15,
-            isNoAuto: false
+            isNoAuto: false,
+            prj_series: this.props.prj_series
         }
         let res = await plist(params);
-        console.log(res);
         this.setState({
             plistArr: [...this.state.plistArr, ...res.data.list],
             isLoadMore: false
@@ -194,8 +196,10 @@ class InvestList extends React.Component {
     }
 }
 
-function mapStateToProps() {
-    return {}
+function mapStateToProps(state) {
+    return {
+        prj_series: state.prjSeries
+    }
 }
 
 function mapDispatchToProps(dispatch) {

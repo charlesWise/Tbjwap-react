@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { IS_SHOW_LOADING } from '../actions';
+import { IS_SHOW_LOADING, PRJ_SERIES } from '../actions';
 
 function Loading(state = false, action) {
   switch (action.type) {
@@ -11,8 +11,18 @@ function Loading(state = false, action) {
   }
 }
 
+function PrjSeries(state = 0, action) {
+  switch (action.type) {
+    case PRJ_SERIES:
+      return action.prj_series;
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   loading: Loading,
+  prjSeries: PrjSeries,
   routing: routerReducer
 });
 
