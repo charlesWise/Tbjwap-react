@@ -39,7 +39,7 @@ class Home extends React.Component {
     let { isShowLoading } = this.props;
     isShowLoading(true);
     /* eslint-disable */
-    banner({ type: 100 }).then(res => {
+    await banner({ type: 100 }).then(res => {
       if (res.boolen == 1) {
         let bannerImg = [];
         if (res.data.length > 0) {
@@ -55,21 +55,21 @@ class Home extends React.Component {
       }
     });
 
-    indexNavigation({}).then(res => {
+    await indexNavigation({}).then(res => {
       if (res.boolen == 1) {
         this.setState({ actNavList: res.data })
         this._isMount();
       }
     });
 
-    recommendNew({}).then(res => {
+    await recommendNew({}).then(res => {
       if (res.boolen == 1) {
         this.setState({ recommendInfo: res.data })
         this._isMount();
-        isShowLoading(false);
       }
     });
     /* eslint-enable */
+    isShowLoading(false);
   }
 
   _isMount() {

@@ -3,11 +3,11 @@
  */
 import fetch from './fetch';
 
-let ctx = '/api';
-let banner = async (params) => fetch('GET', ctx + '/Mobile2/Public/banner', params);
-let indexNavigation = async () => fetch('POST', ctx + '/Mobile2/Index/indexNavigation', {});
-let recommendNew = async () => fetch('POST', ctx + '/Mobile2/Invest/recommendNew', {});
-let plist = async (params) => fetch('POST', ctx + '/Mobile2/Invest/plist', params);
+const ctx = '/api';
+const banner = async (params) => fetch('GET', ctx + '/Mobile2/Public/banner', params);
+const indexNavigation = async () => fetch('POST', ctx + '/Mobile2/Index/indexNavigation', {});
+const recommendNew = async () => fetch('POST', ctx + '/Mobile2/Invest/recommendNew', {});
+const plist = async (params) => fetch('POST', ctx + '/Mobile2/Invest/plist', params);
 
 export {
     banner,
