@@ -7,10 +7,9 @@ export function isShowLoading(isShowLoad) {
     isShowLoad: isShowLoad
   }
 }
-
-export function prjSeries(prj_series) {
+export function prjSeries(type) {
   return {
     type: 'PRJ_SERIES',
-    prj_series: prj_series
+    prjSeries: type
   }
 }

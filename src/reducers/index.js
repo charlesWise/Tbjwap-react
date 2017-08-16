@@ -14,7 +14,7 @@ function Loading(state = false, action) {
 function PrjSeries(state = 0, action) {
   switch (action.type) {
     case PRJ_SERIES:
-      return action.prj_series;
+      return action.prjSeries;
     default:
       return state
   }

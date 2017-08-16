@@ -19,33 +19,31 @@ class InvestList extends React.Component {
             preventRepeatReuqest: false, //到达底部加载数据，防止重复加载
             isLoadMore: false //显示加载动画
         }
-    }
-
-    async componentWillReceiveProps() {
-        this.setState({
-            isLoadMore: true
-        })
-        const params = {
-            page: this.state.page,
-            per_page: 15,
-            isNoAuto: false,
-            prj_series: this.props.prj_series
-        }
-        let res = await plist(params);
-        this.setState({
-            plistArr: [...res.data.list],
-            isLoadMore: false
-        });
+        this.prjSeries = this.props.prjSeries;
     }
 
     async componentDidMount() {
+        this._initData();
+        this._scrollLoading();
+    }
+
+    async componentWillReceiveProps(nextState) {
+        this.prjSeries = nextState.prjSeries;
+        this._initData();
+    }
+
+    async shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.prjSeries == nextState.prjSeries;
+    }
+
+    async _initData() {
         let { isShowLoading } = this.props;
         isShowLoading(true);
         const params = {
             page: this.state.page,
             per_page: 15,
             isNoAuto: false,
-            prj_series: this.props.prj_series
+            prj_series: this.prjSeries
         }
         let res = await plist(params);
         isShowLoading(false);
@@ -53,18 +51,21 @@ class InvestList extends React.Component {
             plistArr: [...res.data.list],
             isLoadMore: false
         });
-        let el = window.document.getElementById('loaderMore');
-        let windowHeight = window.screen.height;
-        let height;
-        let setTop;
-        let paddingBottom;
-        let marginBottom;
-        let requestFram;
-        let oldScrollTop;
-        let scrollEl;
-        let heightEl;
-        let scrollType = el.attributes.type && el.attributes.type.value;
-        let scrollReduce = 2;
+    }
+
+    async _scrollLoading() {
+        let el = window.document.getElementById('loaderMore'),
+            windowHeight = window.screen.height,
+            height,
+            setTop,
+            paddingBottom,
+            marginBottom,
+            requestFram,
+            oldScrollTop,
+            scrollEl,
+            heightEl,
+            scrollType = el.attributes.type && el.attributes.type.value,
+            scrollReduce = 2;
         if (scrollType == 2) {
             scrollEl = el;
             heightEl = el.children[0];
@@ -114,8 +115,7 @@ class InvestList extends React.Component {
 
     //到达底部加载更多数据
     async _loaderMore() {
-        //防止重复请求
-        if (this.state.preventRepeatReuqest) return;
+        if (this.state.preventRepeatReuqest) return; //防止重复请求
         let page = this.state.page + 1;
         this.setState({
             isLoadMore: true,
@@ -127,7 +127,7 @@ class InvestList extends React.Component {
             page: this.state.page,
             per_page: 15,
             isNoAuto: false,
-            prj_series: this.props.prj_series
+            prj_series: this.prjSeries
         }
         let res = await plist(params);
         this.setState({
@@ -198,7 +198,7 @@ class InvestList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        prj_series: state.prjSeries
+        prjSeries: state.prjSeries
     }
 }
 
