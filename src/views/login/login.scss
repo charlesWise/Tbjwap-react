@@ -1,0 +1,101 @@
+@import "../../styles/mixin";
+@import '../../styles/icons';
+
+.login-wrapper {
+    .login-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -$commonIndex;
+        img {
+            width: 100%;
+        }
+    }
+    .login-back {
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.8rem;
+        border: #ff810c 1px solid;
+        border-radius: 50%;
+        background: #fff;
+        position: relative;
+        margin: .5rem 0 0 .5rem;
+        a{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            &::before {
+                position: absolute;
+                left: .15rem;
+                top: .42rem;
+                width: 0;
+                height: 0;
+                content: '';
+                border: .45rem solid transparent;
+                border-right: .45rem solid #ff810c;
+            }
+            &::after {
+                position: absolute;
+                left: .3rem;
+                top: .42rem;
+                width: 0;
+                height: 0;
+                content: '';
+                border: .45rem solid transparent;
+                border-right: .45rem solid #fff;
+            }
+        }
+    }
+    .login-form {
+        .logo {
+            width: 5.5rem;
+            margin: 2rem auto 3rem;
+            img {
+                width: 100%;
+            }
+        }
+        .form {
+            width: 80%;
+            margin: 0 auto;
+            border-bottom: #ff810c .01rem solid;
+            padding: .4rem 0;
+            input {
+                display: block;
+                width: 100%;
+                background: transparent;
+                &::-webkit-input-placeholder { /* WebKit browsers */
+                    @include fontStyle(.65rem, #9A9898);
+                }
+                &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                    @include fontStyle(.65rem, #9A9898);
+                }
+                &::-moz-placeholder { /* Mozilla Firefox 19+ */
+                    @include fontStyle(.65rem, #9A9898);
+                }
+                &:-ms-input-placeholder { /* Internet Explorer 10+ */
+                    @include fontStyle(.65rem, #9A9898);
+                }
+            }
+        }
+        .next-step {
+            width: 80%;
+            @include height(true, 2rem, 2rem);
+            text-align: center;
+            margin: 2rem auto .5rem;
+            background: linear-gradient(to bottom,#f8a916,#fa7409);
+            border-radius: .2rem;
+            a{
+                @include fontStyle(.8rem, #fff);
+            }
+        }
+    }
+    .custody {
+        text-align: center;
+        span{
+            margin-left: .2rem;
+            @include fontStyle(.6rem, #B2AFAF);
+        }
+    }
+}

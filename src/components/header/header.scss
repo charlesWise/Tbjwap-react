@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     z-index: $upDownIndex;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: .01rem solid #e8e8e8;
     ul{
         @include height(true, 1.8rem, 1.8rem);
         background: #fff;

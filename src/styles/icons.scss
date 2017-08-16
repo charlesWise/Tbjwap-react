@@ -38,7 +38,7 @@
 }
 /* footer end */
 .icon-logo-48{
-  background: url(./../../images/logo/logo_48.png) no-repeat;
+  background: url(./../../images/logo/logo-48.png) no-repeat;
   @include spriteIcon(48px, 48px);
 }
 .icon-close{
@@ -64,4 +64,28 @@
 .icon-time{
   background: url(./../../images/home/time.png) no-repeat;
   @include spriteIcon(39px, 39px);
+}
+.icon-custody{
+  background: url(./../../images/icons/custody.png) no-repeat;
+  @include spriteIcon(28px, 25px);
+}
+.icon-eye-close{
+  background: url(./../../images/icons/eye-close.png) no-repeat;
+  @include spriteIcon(100px, 100px);
+}
+.icon-eye-open{
+  background: url(./../../images/icons/eye-open.png) no-repeat;
+  @include spriteIcon(71px, 32px);
+}
+.icon-msg{
+  background: url(./../../images/icons/msg.png) no-repeat;
+  @include spriteIcon(66px, 68px);
+}
+.icon-sign{
+  background: url(./../../images/icons/sign.png) no-repeat;
+  @include spriteIcon(66px, 68px);
+}
+.icon-user{
+  background: url(./../../images/icons/user.png) no-repeat;
+  @include spriteIcon(66px, 68px);
 }
