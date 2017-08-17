@@ -75,17 +75,17 @@
 }
 .icon-eye-open{
   background: url(./../../images/icons/eye-open.png) no-repeat;
-  @include spriteIcon(71px, 32px);
+  @include spriteIcon(71px, 32px, 2/5);
 }
 .icon-msg{
   background: url(./../../images/icons/msg.png) no-repeat;
-  @include spriteIcon(66px, 68px);
+  @include spriteIcon(66px, 68px, 1/3);
 }
 .icon-sign{
   background: url(./../../images/icons/sign.png) no-repeat;
-  @include spriteIcon(66px, 68px);
+  @include spriteIcon(66px, 68px, 1/3);
 }
 .icon-user{
   background: url(./../../images/icons/user.png) no-repeat;
-  @include spriteIcon(66px, 68px);
+  @include spriteIcon(66px, 68px, 2/5);
 }

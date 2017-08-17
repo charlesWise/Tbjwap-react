@@ -2,4 +2,61 @@
 
 .account-info-wrap {
     padding-top: 1.8rem;
+    .account-head{
+        @include backgroundImages('./../../images/account/user-bg.png', 100%, auto);
+        .image-date{
+            padding: 0.3rem .5rem;
+            i{
+                &:nth-child(1) {
+
+                }
+                &:nth-child(2) {
+                    margin-left: .5rem;
+                }
+                &:nth-child(3) {
+                    float: right;
+                    margin-top: .2rem;
+                }
+            }
+        }
+        .means-money {
+            @include clearfix;
+            margin: 1rem 0 1.8rem 0;
+            p{
+                text-align: center;
+                &.name {
+                    @include fontStyle(.6rem, #F9F6F6);
+                    i{
+                        margin: -.2rem 0 0 .3rem;
+                    }
+                }
+                &.money {
+                    @include fontStyle(1.2rem, #fff);
+                }
+            }
+        }
+        .profit {
+            border-top: 1px solid rgba(255, 255, 255, 0.7);
+            padding: .6rem 0;
+            ul {
+                display: flex;
+                // @include height(true, 1.8rem, 1.8rem);
+                li {
+                    flex: 1;
+                    text-align: center;
+                    &:nth-child(1) {
+                        border-right: 1px solid rgba(255, 255, 255, 0.7);
+                    }
+                    p{
+                        &:nth-child(1) {
+                            @include fontStyle(.8rem, #fff);
+                        }
+                        &:nth-child(2) {
+                            @include fontStyle(.6rem, #F9F6F6);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
